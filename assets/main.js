@@ -89,6 +89,13 @@ if (status) {
     .then((rel) => {
       const assets = rel.assets || []
       const mac = assets.find((a) => /arm64.*\.dmg$/i.test(a.name)) || assets.find((a) => /\.dmg$/i.test(a.name))
+      const intel = assets.find((a) => /x64.*\.dmg$/i.test(a.name))
+      const intelLink = document.querySelector('[data-asset="mac-intel"]')
+      if (intel && intelLink) {
+        intelLink.href = intel.browser_download_url
+        intelLink.textContent = `Intel Mac용 다운로드 · ${(intel.size / 1e6).toFixed(0)}MB`
+        intelLink.hidden = false
+      }
       const win = assets.find((a) => /\.exe$/i.test(a.name))
       if (!mac && !win) return notYet()
       const date = new Date(rel.published_at).toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' })

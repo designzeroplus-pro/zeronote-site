@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ZeroNote 다운로드 — macOS, Windows</title>
-  <meta name="description" content="ZeroNote를 macOS(Apple Silicon)와 Windows에서 무료로 내려받으세요. 회원가입 없이 바로 쓸 수 있습니다." />
+  <meta name="description" content="ZeroNote를 macOS(Apple Silicon·Intel)와 Windows에서 무료로 내려받으세요. 회원가입 없이 바로 쓸 수 있습니다." />
   <meta name="theme-color" content="#f5f5f5" />
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
@@ -54,12 +54,13 @@
             <span class="badge">내 컴퓨터</span>
           </div>
           <dl>
-            <div><dt>칩</dt><dd>Apple Silicon (M1 이상)</dd></div>
+            <div><dt>칩</dt><dd>Apple Silicon · Intel</dd></div>
             <div><dt>운영체제</dt><dd>macOS 13 Ventura 이상</dd></div>
             <div><dt>파일</dt><dd>디스크 이미지 (.dmg)</dd></div>
           </dl>
-          <a class="btn btn-dark" data-asset="mac" href="#">macOS용 다운로드</a>
+          <a class="btn btn-dark" data-asset="mac" href="#">Apple Silicon용 다운로드</a>
           <p class="file-name" data-asset-name="mac"></p>
+          <a class="text-link" data-asset="mac-intel" href="#" hidden>Intel Mac용 다운로드</a>
         </article>
 
         <article class="platform" id="windows" data-platform="windows">
@@ -130,7 +131,7 @@
           </thead>
           <tbody>
             <tr><td>운영체제</td><td>macOS 13 이상</td><td>Windows 10, 11 (64비트)</td></tr>
-            <tr><td>프로세서</td><td>Apple Silicon (M1 이상)</td><td>최근 5년 이내 x64 CPU</td></tr>
+            <tr><td>프로세서</td><td>Apple Silicon 또는 Intel</td><td>최근 5년 이내 x64 CPU</td></tr>
             <tr><td>메모리</td><td>8GB 이상</td><td>8GB 이상 (16GB 권장)</td></tr>
             <tr><td>저장 공간</td><td>앱과 모델 약 1GB, 녹음 1시간당 약 115MB</td><td>앱과 모델 약 1GB, 녹음 1시간당 약 115MB</td></tr>
             <tr><td>인터넷</td><td colspan="2">설치와 모델 내려받기에만 필요합니다. 녹음과 받아쓰기는 오프라인에서도 됩니다. AI 요약(Claude·ChatGPT)은 인터넷이 필요해요.</td></tr>
@@ -146,6 +147,17 @@
           <h2>변경 기록</h2>
         </div>
         <div class="changelog" id="changelog-list">
+          <article class="release">
+            <div class="release-ver">v0.2.0<small>베타 · 2026년 11월</small></div>
+            <ul>
+              <li>Intel Mac 지원, 새 버전 알림</li>
+              <li>화자 구분(나 / 상대), 스크립트 편집, 용어·바꾸기 규칙</li>
+              <li>회의록 형식 선택, 전체 검색, 회의록에 질문하기</li>
+              <li>폴더·태그, 할 일 모아보기, PDF·SRT·Slack·Notion 내보내기</li>
+              <li>회의 감지 알림, 메뉴 막대와 단축키로 녹음</li>
+              <li>첫 실행 안내, 다크 모드, 영어 화면, 백업과 자동 정리</li>
+            </ul>
+          </article>
           <article class="release">
             <div class="release-ver">v0.1.0<small>베타 · 2026년 11월</small></div>
             <ul>
