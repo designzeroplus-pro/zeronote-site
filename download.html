@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ZeroNote 다운로드 — macOS, Windows</title>
+  <meta name="description" content="ZeroNote를 macOS(Apple Silicon)와 Windows에서 무료로 내려받으세요. 회원가입 없이 바로 쓸 수 있습니다." />
+  <meta name="theme-color" content="#f5f5f5" />
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header class="nav" aria-label="주 메뉴">
+    <a class="logo" href="./" aria-label="ZeroNote 홈">
+      <span class="logo-mark" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 14 14"><path d="M1 7h2l1.5-4 2 8 2-6 1.5 2H13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg>
+      </span>
+      ZeroNote
+    </a>
+    <nav class="nav-links">
+      <a href="./#features">기능</a>
+      <a href="./#pricing">요금</a>
+      <a href="#guide">설치 안내</a>
+      <a href="#changelog">변경 기록</a>
+    </nav>
+    <a class="btn btn-dark" href="download.html" aria-current="page">다운로드</a>
+  </header>
+
+  <main>
+    <section class="dl-hero">
+      <svg class="waves" viewBox="0 0 1600 420" aria-hidden="true" fill="none" stroke="rgba(0,0,0,.11)" stroke-width="1">
+        <ellipse cx="800" cy="-60" rx="340" ry="170" />
+        <ellipse cx="800" cy="-60" rx="480" ry="250" />
+        <ellipse cx="800" cy="-60" rx="640" ry="330" />
+        <ellipse cx="800" cy="-60" rx="820" ry="420" stroke="rgba(0,0,0,.07)" />
+      </svg>
+      <div class="wrap">
+        <h1>ZeroNote 다운로드</h1>
+        <p class="hero-sub">무료입니다. 회원가입 없이 설치하고 바로 녹음을 시작하세요.</p>
+        <div class="hero-cta">
+          <a class="btn btn-dark" id="primary-dl" href="#platforms">내 컴퓨터용 다운로드</a>
+          <a class="btn btn-light" href="#platforms">다른 플랫폼</a>
+        </div>
+        <p class="release-status" id="release-status" role="status">최신 버전을 확인하는 중…</p>
+      </div>
+    </section>
+
+    <div class="wrap" id="platforms">
+      <div class="platforms">
+        <article class="platform" id="mac" data-platform="mac">
+          <div class="platform-head">
+            <h2>macOS</h2>
+            <span class="badge">내 컴퓨터</span>
+          </div>
+          <dl>
+            <div><dt>칩</dt><dd>Apple Silicon (M1 이상)</dd></div>
+            <div><dt>운영체제</dt><dd>macOS 13 Ventura 이상</dd></div>
+            <div><dt>파일</dt><dd>디스크 이미지 (.dmg)</dd></div>
+          </dl>
+          <a class="btn btn-dark" data-asset="mac" href="#">macOS용 다운로드</a>
+          <p class="file-name" data-asset-name="mac"></p>
+        </article>
+
+        <article class="platform" id="windows" data-platform="windows">
+          <div class="platform-head">
+            <h2>Windows</h2>
+            <span class="badge">내 컴퓨터</span>
+          </div>
+          <dl>
+            <div><dt>프로세서</dt><dd>64비트 (x64)</dd></div>
+            <div><dt>운영체제</dt><dd>Windows 10, 11</dd></div>
+            <div><dt>파일</dt><dd>설치 프로그램 (.exe)</dd></div>
+          </dl>
+          <a class="btn btn-dark" data-asset="win" href="#">Windows용 다운로드</a>
+          <p class="file-name" data-asset-name="win"></p>
+        </article>
+
+        <article class="platform soon">
+          <div class="platform-head">
+            <h2>Linux</h2>
+          </div>
+          <dl>
+            <div><dt>상태</dt><dd>준비 중입니다</dd></div>
+            <div><dt>소식 받기</dt><dd>GitHub 저장소에서 Watch → Releases를 켜 두면 새 버전이 나올 때 알려 드려요.</dd></div>
+          </dl>
+          <a class="btn btn-light" href="https://github.com/designzeroplus-pro/zeronote-site">GitHub에서 소식 받기</a>
+        </article>
+      </div>
+    </div>
+
+    <section class="section" id="guide">
+      <div class="wrap guide">
+        <div>
+          <p class="eyebrow">Install</p>
+          <h2>설치하고<br />첫 회의 녹음하기</h2>
+        </div>
+        <div class="steps-card">
+          <div class="tabs" role="tablist" aria-label="운영체제">
+            <button role="tab" aria-selected="true" aria-controls="steps-mac" id="tab-mac">macOS</button>
+            <button role="tab" aria-selected="false" aria-controls="steps-win" id="tab-win">Windows</button>
+          </div>
+          <ol class="steps show" id="steps-mac" role="tabpanel" aria-labelledby="tab-mac">
+            <li><div><b>앱 설치</b><p>내려받은 .dmg 파일을 열고 ZeroNote를 응용 프로그램 폴더로 끌어다 놓으세요.</p></div></li>
+            <li><div><b>처음 열기</b><p>베타 빌드는 아직 Apple 공증 전이라 처음 열 때 경고가 나올 수 있어요. 시스템 설정 → 개인정보 보호 및 보안에서 '그래도 열기'를 누르세요.</p></div></li>
+            <li><div><b>권한 허용</b><p>녹음을 처음 시작하면 마이크 권한을 묻습니다. 화상회의 상대방 목소리까지 녹음하려면 '화면 및 시스템 오디오 녹음' 권한도 허용해 주세요. 화면 영상은 저장하지 않아요.</p></div></li>
+            <li><div><b>음성 인식 모델 내려받기</b><p>설정 → 음성 인식에서 Large v3 Turbo(574MB)를 내려받으면 준비가 끝납니다. 한 번만 받으면 돼요.</p></div></li>
+            <li><div><b>녹음 시작</b><p>'녹음 시작'을 누르면 받아쓰기가 시작됩니다. AI 요약을 원하면 설정 → 요약 AI에서 내 Claude나 ChatGPT 계정을 연결하세요.</p></div></li>
+          </ol>
+          <ol class="steps" id="steps-win" role="tabpanel" aria-labelledby="tab-win" hidden>
+            <li><div><b>설치 프로그램 실행</b><p>내려받은 .exe 파일을 실행하고 안내에 따라 설치하세요.</p></div></li>
+            <li><div><b>보안 경고가 나오면</b><p>베타 빌드는 아직 코드 서명 전이라 'Windows의 PC 보호' 창이 뜰 수 있어요. '추가 정보'를 누른 뒤 '실행'을 누르세요.</p></div></li>
+            <li><div><b>전사 엔진 설치</b><p>처음 실행하면 설정 → 음성 인식에서 '전사 엔진 자동 설치'를 눌러 주세요. 공식 whisper.cpp 빌드를 내려받아 설치합니다.</p></div></li>
+            <li><div><b>음성 인식 모델 내려받기</b><p>같은 화면에서 모델을 내려받으세요. 사양이 낮은 PC라면 Small 모델이 더 빠릅니다.</p></div></li>
+            <li><div><b>녹음 시작</b><p>'녹음 시작'을 누르면 마이크와 컴퓨터 소리를 함께 받아 적습니다. Windows는 별도 권한 없이 컴퓨터 소리를 녹음할 수 있어요.</p></div></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="requirements">
+      <div class="wrap guide">
+        <div>
+          <p class="eyebrow">Requirements</p>
+          <h2>권장 사양</h2>
+        </div>
+        <table class="req-table">
+          <thead>
+            <tr><th scope="col">항목</th><th scope="col">macOS</th><th scope="col">Windows</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>운영체제</td><td>macOS 13 이상</td><td>Windows 10, 11 (64비트)</td></tr>
+            <tr><td>프로세서</td><td>Apple Silicon (M1 이상)</td><td>최근 5년 이내 x64 CPU</td></tr>
+            <tr><td>메모리</td><td>8GB 이상</td><td>8GB 이상 (16GB 권장)</td></tr>
+            <tr><td>저장 공간</td><td>앱과 모델 약 1GB, 녹음 1시간당 약 115MB</td><td>앱과 모델 약 1GB, 녹음 1시간당 약 115MB</td></tr>
+            <tr><td>인터넷</td><td colspan="2">설치와 모델 내려받기에만 필요합니다. 녹음과 받아쓰기는 오프라인에서도 됩니다. AI 요약(Claude·ChatGPT)은 인터넷이 필요해요.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" id="changelog">
+      <div class="wrap guide">
+        <div>
+          <p class="eyebrow">Changelog</p>
+          <h2>변경 기록</h2>
+        </div>
+        <div class="changelog" id="changelog-list">
+          <article class="release">
+            <div class="release-ver">v0.1.0<small>베타 · 2026년 11월</small></div>
+            <ul>
+              <li>마이크와 컴퓨터 소리를 함께 녹음하고 20~30초마다 실시간으로 받아 적기</li>
+              <li>whisper.cpp 기반 로컬 음성 인식, 무음 구간 건너뛰기(VAD)</li>
+              <li>내 Claude·ChatGPT 계정 연결로 요약, 결정 사항, 할 일 정리</li>
+              <li>파형 플레이어, 스크립트 검색, 문장 눌러 다시 듣기</li>
+              <li>녹음 파일 불러오기와 Markdown 내보내기</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="final">
+      <div class="wrap">
+        <h2>문제가 있나요?</h2>
+        <p>앱 버전과 운영체제를 적어서 알려 주시면 빠르게 확인할게요.</p>
+        <a class="btn btn-dark" href="https://github.com/designzeroplus-pro/zeronote-site/issues">GitHub에 문제 신고</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="./">
+          <span class="logo-mark" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 14 14"><path d="M1 7h2l1.5-4 2 8 2-6 1.5 2H13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          </span>
+          ZeroNote
+        </a>
+        <p>봇 없이, 내 컴퓨터에서 끝나는 회의록. © 2026 ZeroPlus</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="download.html">다운로드</a></li>
+          <li><a href="./#features">기능</a></li>
+          <li><a href="./#pricing">요금</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#guide">설치 안내</a></li>
+          <li><a href="#changelog">변경 기록</a></li>
+          <li><a href="./#faq">자주 묻는 질문</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Community</h4>
+        <ul>
+          <li><a href="https://github.com/designzeroplus-pro/zeronote-site">GitHub</a></li>
+          <li><a href="https://github.com/designzeroplus-pro/zeronote-site/issues">문제 신고</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/main.js" defer></script>
+</body>
+</html>
