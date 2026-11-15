@@ -201,27 +201,19 @@ a {
   max-width: none;
   pointer-events: none;
 }
-/* 소리가 퍼지듯 고리가 위쪽 가운데에서 바깥으로 번지고, 기존 고리는 천천히 숨 쉰다 */
+/* 소리가 퍼지듯 고리가 위쪽 가운데에서 바깥으로 번진다 */
 .waves ellipse {
   transform-box: view-box;
   transform-origin: 800px -60px;
   vector-effect: non-scaling-stroke;
-  animation: breathe 7s ease-in-out infinite;
 }
-.waves ellipse:nth-child(2) { animation-delay: -1.2s; }
-.waves ellipse:nth-child(3) { animation-delay: -2.4s; }
-.waves ellipse:nth-child(4) { animation-delay: -3.6s; }
 .waves .ripple {
   stroke: rgba(0, 0, 0, 0.14);
   opacity: 0;
   animation: ripple 9s cubic-bezier(0.2, 0.6, 0.35, 1) infinite;
 }
-.waves .ripple:nth-of-type(6) { animation-delay: 3s; }
-.waves .ripple:nth-of-type(7) { animation-delay: 6s; }
-@keyframes breathe {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.018); }
-}
+.waves .ripple:nth-of-type(2) { animation-delay: 3s; }
+.waves .ripple:nth-of-type(3) { animation-delay: 6s; }
 @keyframes ripple {
   0% { transform: scale(0.35); opacity: 0; }
   12% { opacity: 1; }

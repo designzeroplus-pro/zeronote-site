@@ -133,8 +133,8 @@
             <tr><td>운영체제</td><td>macOS 13 이상</td><td>Windows 10, 11 (64비트)</td></tr>
             <tr><td>프로세서</td><td>Apple Silicon 또는 Intel</td><td>최근 5년 이내 x64 CPU</td></tr>
             <tr><td>메모리</td><td>8GB 이상</td><td>8GB 이상 (16GB 권장)</td></tr>
-            <tr><td>저장 공간</td><td>앱과 모델 약 1GB, 녹음 1시간당 약 115MB</td><td>앱과 모델 약 1GB, 녹음 1시간당 약 115MB</td></tr>
-            <tr><td>인터넷</td><td colspan="2">설치와 모델 내려받기에만 필요합니다. 녹음과 받아쓰기는 오프라인에서도 됩니다. AI 요약(Claude·ChatGPT)은 인터넷이 필요해요.</td></tr>
+            <tr><td>저장 공간</td><td colspan="2">앱과 음성 모델 약 1GB, 요약 모델 2.5~7.3GB, 녹음 1시간당 약 115MB</td></tr>
+            <tr><td>인터넷</td><td colspan="2">설치와 모델 내려받기에만 필요합니다. 녹음과 받아쓰기는 오프라인에서도 됩니다. 기본 요약도 오프라인에서 됩니다. Claude·ChatGPT로 요약할 때만 인터넷이 필요해요.</td></tr>
           </tbody>
         </table>
       </div>
@@ -147,6 +147,15 @@
           <h2>변경 기록</h2>
         </div>
         <div class="changelog" id="changelog-list">
+          <article class="release">
+            <div class="release-ver">v0.3.0<small>베타 · 2026년 11월</small></div>
+            <ul>
+              <li>무료 로컬 AI 요약이 기본: 앱에 든 엔진으로 이 컴퓨터에서 요약·질문</li>
+              <li>요약 모델 한 번 내려받기 (Qwen3 4B / Gemma 3 12B, 메모리에 맞춰 추천)</li>
+              <li>긴 회의는 나눠서 요약한 뒤 합치기</li>
+              <li>Claude·ChatGPT는 "더 정확한 요약" 옵션으로</li>
+            </ul>
+          </article>
           <article class="release">
             <div class="release-ver">v0.2.0<small>베타 · 2026년 11월</small></div>
             <ul>

@@ -4,9 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ZeroNote — 봇 없이, 내 컴퓨터에서 끝나는 회의록</title>
-  <meta name="description" content="ZeroNote는 마이크와 컴퓨터 소리를 받아 적어 회의록으로 정리하는 무료 데스크톱 앱입니다. 음성은 기기 밖으로 나가지 않고, 요약은 원할 때만 내 Claude·ChatGPT 계정으로 합니다." />
+  <meta name="description" content="ZeroNote는 마이크와 컴퓨터 소리를 받아 적어 회의록으로 정리하는 무료 데스크톱 앱입니다. 음성은 기기 밖으로 나가지 않고, 요약도 이 컴퓨터의 무료 AI로 합니다. 더 정확한 요약이 필요하면 내 Claude·ChatGPT 계정을 연결하세요." />
   <meta property="og:title" content="ZeroNote — 봇 없이, 내 컴퓨터에서 끝나는 회의록" />
-  <meta property="og:description" content="녹음과 받아쓰기는 무료로 내 컴퓨터에서. 요약은 원할 때만 내 AI 계정으로." />
+  <meta property="og:description" content="녹음, 받아쓰기, 요약까지 무료로 내 컴퓨터에서." />
   <meta property="og:image" content="assets/app-meeting.jpg" />
   <meta name="theme-color" content="#f5f5f5" />
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
@@ -33,10 +33,6 @@
   <main>
     <section class="hero">
       <svg class="waves" viewBox="0 0 1600 420" aria-hidden="true" fill="none" stroke="rgba(0,0,0,.11)" stroke-width="1">
-        <ellipse cx="800" cy="-60" rx="340" ry="170" />
-        <ellipse cx="800" cy="-60" rx="480" ry="250" />
-        <ellipse cx="800" cy="-60" rx="640" ry="330" />
-        <ellipse cx="800" cy="-60" rx="820" ry="420" stroke="rgba(0,0,0,.07)" />
         <ellipse class="ripple" cx="800" cy="-60" rx="340" ry="170" />
         <ellipse class="ripple" cx="800" cy="-60" rx="340" ry="170" />
         <ellipse class="ripple" cx="800" cy="-60" rx="340" ry="170" />
@@ -120,8 +116,8 @@
           </article>
 
           <article class="card">
-            <h3>AI는 내 계정으로</h3>
-            <p>요약이 필요할 때만 내 Claude나 ChatGPT 계정을 연결하세요. 키는 이 컴퓨터에만 저장되고, 스크립트 텍스트만 보냅니다.</p>
+            <h3>요약도 이 컴퓨터에서</h3>
+            <p>기본 요약은 앱에 든 로컬 AI가 무료로 합니다. 더 정확한 요약을 원하면 내 Claude나 ChatGPT 계정을 연결하세요. 키는 이 컴퓨터에만 저장됩니다.</p>
             <div class="art" aria-hidden="true">
               <svg viewBox="0 0 300 250" fill="none" stroke="currentColor" stroke-width="1">
                 <g stroke-opacity=".4">
@@ -223,7 +219,7 @@
     <section class="section" id="pricing">
       <div class="wrap">
         <p class="eyebrow">Pricing</p>
-        <h2>무료로 쓰세요<br />요약할 때만 내 계정으로</h2>
+        <h2>요약까지 무료로<br />더 정확한 요약은 내 계정으로</h2>
         <div class="pricing">
           <article class="plan">
             <p class="plan-name">ZeroNote</p>
@@ -233,18 +229,19 @@
               <li>녹음·받아쓰기 시간 제한 없음</li>
               <li>마이크와 컴퓨터 소리 동시 녹음</li>
               <li>스크립트 검색, 파형 재생, Markdown 내보내기</li>
+              <li>로컬 AI로 요약·할 일 정리 (모델 한 번 내려받기)</li>
               <li>회원가입 없이 바로 사용</li>
             </ul>
             <a class="btn btn-dark" href="download.html">무료로 다운로드</a>
           </article>
           <article class="plan plan-alt">
-            <p class="plan-name">AI 요약 (선택)</p>
+            <p class="plan-name">더 정확한 요약 (선택)</p>
             <p class="plan-price">내 계정<small>사용한 만큼</small></p>
-            <p class="plan-desc">회의록 요약이 필요하면 내 Claude나 ChatGPT 계정을 연결하세요. 요금은 각 서비스가 내 계정으로 청구합니다.</p>
+            <p class="plan-desc">긴 회의나 세부 내용까지 정확하게 정리하려면 내 Claude나 ChatGPT 계정을 연결하세요. 요금은 각 서비스가 내 계정으로 청구합니다.</p>
             <ul>
               <li>Claude 또는 ChatGPT API 키 연결</li>
-              <li>요약·결정 사항·할 일 자동 정리</li>
-              <li>로컬 AI(Ollama)로 오프라인 요약도 가능</li>
+              <li>더 꼼꼼한 요약·결정 사항·할 일 정리</li>
+              <li>언제든 무료 로컬 AI로 되돌리기</li>
               <li>ZeroNote는 수수료를 받지 않아요</li>
             </ul>
             <a class="link-arrow" href="#faq-key">API 키가 처음이라면
@@ -265,11 +262,11 @@
         <div class="faq">
           <details>
             <summary>정말 무료인가요?</summary>
-            <p>네. 녹음, 받아쓰기, 스크립트, 다시 듣기는 모두 이 컴퓨터에서 처리되기 때문에 비용이 들지 않고 시간 제한도 없습니다. AI 요약을 쓰고 싶을 때만 내 AI 계정을 연결하면 되고, 그 사용료는 각 서비스에서 청구됩니다.</p>
+            <p>네. 녹음, 받아쓰기, 스크립트, 다시 듣기는 모두 이 컴퓨터에서 처리되기 때문에 비용이 들지 않고 시간 제한도 없습니다. 요약도 앱에 든 로컬 AI가 무료로 합니다. 더 정확한 요약을 위해 Claude나 ChatGPT 계정을 연결한 경우에만 그 사용료가 각 서비스에서 청구됩니다.</p>
           </details>
           <details>
             <summary>녹음한 음성이 외부로 전송되나요?</summary>
-            <p>아니요. 음성은 이 컴퓨터에 저장되고 받아쓰기도 이 컴퓨터에서 합니다. AI 요약을 켠 경우에만 받아 적은 텍스트가 연결한 서비스(Anthropic 또는 OpenAI)로 전송됩니다. 로컬 AI를 쓰면 텍스트도 밖으로 나가지 않아요.</p>
+            <p>아니요. 음성은 이 컴퓨터에 저장되고 받아쓰기도 이 컴퓨터에서 합니다. 기본 요약도 이 컴퓨터의 로컬 AI가 하므로 텍스트도 밖으로 나가지 않아요. Claude나 ChatGPT 계정을 연결한 경우에만 받아 적은 텍스트가 그 서비스(Anthropic 또는 OpenAI)로 전송됩니다.</p>
           </details>
           <details id="faq-key">
             <summary>API 키는 어떻게 만드나요?</summary>
