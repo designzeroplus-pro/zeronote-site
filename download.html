@@ -4,8 +4,14 @@
   <meta charset="utf-8" />
   <meta name="color-scheme" content="only light" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ZeroNote 다운로드 — macOS, Windows</title>
-  <meta name="description" content="ZeroNote를 macOS(Apple Silicon·Intel)와 Windows에서 무료로 내려받으세요. 회원가입 없이 바로 쓸 수 있습니다." />
+  <title>ZeroNote 다운로드 — macOS</title>
+  <meta name="description" content="ZeroNote를 macOS(Apple Silicon·Intel)에서 무료로 내려받으세요. 회원가입 없이 바로 쓸 수 있습니다. Windows 버전은 준비 중입니다." />
+  <link rel="canonical" href="https://zeronote-app.netlify.app/download.html" />
+  <meta property="og:title" content="ZeroNote 다운로드" />
+  <meta property="og:description" content="녹음, 받아쓰기, 요약까지 무료로 내 컴퓨터에서." />
+  <meta property="og:url" content="https://zeronote-app.netlify.app/download.html" />
+  <meta property="og:image" content="https://zeronote-app.netlify.app/assets/og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="theme-color" content="#f5f5f5" />
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
@@ -31,10 +37,9 @@
   <main>
     <section class="dl-hero">
       <svg class="waves" viewBox="0 0 1600 420" aria-hidden="true" fill="none" stroke="rgba(0,0,0,.11)" stroke-width="1">
-        <ellipse cx="800" cy="-60" rx="340" ry="170" />
-        <ellipse cx="800" cy="-60" rx="480" ry="250" />
-        <ellipse cx="800" cy="-60" rx="640" ry="330" />
-        <ellipse cx="800" cy="-60" rx="820" ry="420" stroke="rgba(0,0,0,.07)" />
+        <ellipse class="ripple" cx="800" cy="-60" rx="340" ry="170" />
+        <ellipse class="ripple" cx="800" cy="-60" rx="340" ry="170" />
+        <ellipse class="ripple" cx="800" cy="-60" rx="340" ry="170" />
       </svg>
       <div class="wrap">
         <h1>ZeroNote 다운로드</h1>
@@ -64,17 +69,17 @@
           <a class="text-link" data-asset="mac-intel" href="#" hidden>Intel Mac용 다운로드</a>
         </article>
 
-        <article class="platform" id="windows" data-platform="windows">
+        <article class="platform soon" id="windows" data-platform="windows">
           <div class="platform-head">
             <h2>Windows</h2>
             <span class="badge">내 컴퓨터</span>
           </div>
           <dl>
-            <div><dt>프로세서</dt><dd>64비트 (x64)</dd></div>
-            <div><dt>운영체제</dt><dd>Windows 10, 11</dd></div>
-            <div><dt>파일</dt><dd>설치 프로그램 (.exe)</dd></div>
+            <div><dt>상태</dt><dd>준비 중입니다</dd></div>
+            <div><dt>대상</dt><dd>Windows 10, 11 (64비트)</dd></div>
+            <div><dt>소식 받기</dt><dd>GitHub 저장소에서 Watch → Releases를 켜 두면 나올 때 알려 드려요.</dd></div>
           </dl>
-          <a class="btn btn-dark" data-asset="win" href="#">Windows용 다운로드</a>
+          <a class="btn btn-light" data-asset="win" href="https://github.com/designzeroplus-pro/zeronote-site">GitHub에서 소식 받기</a>
           <p class="file-name" data-asset-name="win"></p>
         </article>
 
@@ -106,8 +111,8 @@
             <li><div><b>앱 설치</b><p>내려받은 .dmg 파일을 열고 ZeroNote를 응용 프로그램 폴더로 끌어다 놓으세요.</p></div></li>
             <li><div><b>처음 열기</b><p>베타 빌드는 아직 Apple 공증 전이라 처음 열 때 경고가 나올 수 있어요. 시스템 설정 → 개인정보 보호 및 보안에서 '그래도 열기'를 누르세요.</p></div></li>
             <li><div><b>권한 허용</b><p>녹음을 처음 시작하면 마이크 권한을 묻습니다. 화상회의 상대방 목소리까지 녹음하려면 '화면 및 시스템 오디오 녹음' 권한도 허용해 주세요. 화면 영상은 저장하지 않아요.</p></div></li>
-            <li><div><b>음성 인식 모델 내려받기</b><p>설정 → 음성 인식에서 Large v3 Turbo(574MB)를 내려받으면 준비가 끝납니다. 한 번만 받으면 돼요.</p></div></li>
-            <li><div><b>녹음 시작</b><p>'녹음 시작'을 누르면 받아쓰기가 시작됩니다. AI 요약을 원하면 설정 → 요약 AI에서 내 Claude나 ChatGPT 계정을 연결하세요.</p></div></li>
+            <li><div><b>모델 내려받기</b><p>첫 실행 안내에 따라 음성 인식 모델(Large v3 Turbo, 574MB)과 요약 모델(2.5GB부터)을 내려받으면 준비가 끝납니다. 한 번만 받으면 돼요. 나중에 설정에서 받아도 됩니다.</p></div></li>
+            <li><div><b>녹음 시작</b><p>'녹음 시작'을 누르면 받아쓰기가 시작되고, 녹음이 끝나면 이 컴퓨터의 AI가 요약합니다. 더 정확한 요약을 원하면 설정 → 요약 AI에서 내 Claude나 ChatGPT 계정을 연결하세요.</p></div></li>
           </ol>
           <ol class="steps" id="steps-win" role="tabpanel" aria-labelledby="tab-win" hidden>
             <li><div><b>설치 프로그램 실행</b><p>내려받은 .exe 파일을 실행하고 안내에 따라 설치하세요.</p></div></li>
@@ -128,7 +133,7 @@
         </div>
         <table class="req-table">
           <thead>
-            <tr><th scope="col">항목</th><th scope="col">macOS</th><th scope="col">Windows</th></tr>
+            <tr><th scope="col">항목</th><th scope="col">macOS</th><th scope="col">Windows (준비 중)</th></tr>
           </thead>
           <tbody>
             <tr><td>운영체제</td><td>macOS 13 이상</td><td>Windows 10, 11 (64비트)</td></tr>

@@ -8,7 +8,14 @@
   <meta name="description" content="ZeroNote는 마이크와 컴퓨터 소리를 받아 적어 회의록으로 정리하는 무료 데스크톱 앱입니다. 음성은 기기 밖으로 나가지 않고, 요약도 이 컴퓨터의 무료 AI로 합니다. 더 정확한 요약이 필요하면 내 Claude·ChatGPT 계정을 연결하세요." />
   <meta property="og:title" content="ZeroNote — 봇 없이, 내 컴퓨터에서 끝나는 회의록" />
   <meta property="og:description" content="녹음, 받아쓰기, 요약까지 무료로 내 컴퓨터에서." />
-  <meta property="og:image" content="assets/app-meeting.jpg" />
+  <link rel="canonical" href="https://zeronote-app.netlify.app/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://zeronote-app.netlify.app/" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta property="og:image" content="https://zeronote-app.netlify.app/assets/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="theme-color" content="#f5f5f5" />
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
@@ -43,9 +50,9 @@
         <p class="hero-sub">ZeroNote는 마이크와 컴퓨터 소리를 받아 적어 회의록으로 정리하는 무료 데스크톱 앱입니다. 음성은 기기 밖으로 나가지 않습니다.</p>
         <div class="hero-cta">
           <a class="btn btn-dark" data-dl="primary" href="download.html#mac">macOS용 다운로드</a>
-          <a class="btn btn-light" data-dl="secondary" href="download.html#windows">Windows용 다운로드</a>
+          <a class="btn btn-light" data-dl="secondary" href="download.html#windows">Windows는 준비 중</a>
         </div>
-        <p class="hero-note">무료이고 회원가입이 필요 없어요. macOS(Apple Silicon·Intel)와 Windows를 지원합니다.</p>
+        <p class="hero-note">무료이고 회원가입이 필요 없어요. macOS(Apple Silicon·Intel)용이며, Windows 버전은 준비 중입니다.</p>
       </div>
     </section>
 
@@ -62,7 +69,7 @@
       <figure class="showcase" style="margin:0">
         <div class="window">
           <div class="window-bar" aria-hidden="true"><i></i><i></i><i></i></div>
-          <img src="assets/app-meeting.jpg" width="2560" height="1640" alt="ZeroNote 회의 화면. 회의 제목, 길이·문장·할 일 수, 파형 플레이어, 요약과 주요 논의 카드가 보인다." />
+          <img src="assets/app-meeting.jpg" srcset="assets/app-meeting-800.jpg 800w, assets/app-meeting-1400.jpg 1400w, assets/app-meeting.jpg 2560w" sizes="(max-width: 520px) 130vw, (max-width: 1200px) 92vw, 1010px" width="2560" height="1640" alt="ZeroNote 회의 화면. 회의 제목, 길이·문장·할 일 수, 파형 플레이어, 요약과 주요 논의 카드가 보인다." />
         </div>
       </figure>
     </div>
@@ -121,22 +128,25 @@
             <p>기본 요약은 앱에 든 로컬 AI가 무료로 합니다. 더 정확한 요약을 원하면 내 Claude나 ChatGPT 계정을 연결하세요. 키는 이 컴퓨터에만 저장됩니다.</p>
             <div class="art" aria-hidden="true">
               <svg viewBox="0 0 300 250" fill="none" stroke="currentColor" stroke-width="1">
-                <g stroke-opacity=".4">
-                  <path d="M76 125C110 125 110 125 128 125" />
-                  <path d="M172 125C200 125 200 70 226 70" />
-                  <path d="M172 125C200 125 200 125 226 125" />
-                  <path d="M172 125C200 125 200 180 226 180" />
+                <!-- 노트북 안: 스크립트 → 로컬 AI (기본) -->
+                <rect x="20" y="62" width="168" height="112" rx="10" stroke-opacity=".55" />
+                <path d="M8 186h192" stroke-opacity=".55" />
+                <rect x="34" y="104" width="52" height="28" rx="7" stroke-opacity=".55" />
+                <text x="60" y="122" text-anchor="middle" class="tag" fill="#000" fill-opacity=".7" stroke="none">스크립트</text>
+                <path d="M86 118h28" stroke-opacity=".4" />
+                <rect x="114" y="105" width="60" height="26" rx="6" fill="#000" stroke="none" />
+                <text x="144" y="122" text-anchor="middle" class="tag" fill="#fff" stroke="none">로컬 AI</text>
+                <!-- 선택: 내 계정으로 보내기 -->
+                <g stroke-opacity=".35" stroke-dasharray="3 4">
+                  <path d="M174 118C204 118 204 92 226 92" />
+                  <path d="M174 118C204 118 204 146 226 146" />
                 </g>
-                <rect x="24" y="111" width="52" height="28" rx="7" stroke-opacity=".55" />
-                <text x="50" y="129" text-anchor="middle" class="tag" fill="#000" fill-opacity=".7" stroke="none">스크립트</text>
-                <rect x="128" y="113" width="44" height="24" rx="6" fill="#000" stroke="none" />
-                <text x="150" y="129" text-anchor="middle" class="tag" fill="#fff" stroke="none">내 키</text>
-                <rect x="226" y="58" width="56" height="24" rx="6" stroke-opacity=".55" />
-                <text x="254" y="74" text-anchor="middle" class="tag" fill="#000" fill-opacity=".7" stroke="none">Claude</text>
-                <rect x="226" y="113" width="56" height="24" rx="6" stroke-opacity=".55" />
-                <text x="254" y="129" text-anchor="middle" class="tag" fill="#000" fill-opacity=".7" stroke="none">ChatGPT</text>
-                <rect x="226" y="168" width="56" height="24" rx="6" stroke-opacity=".55" />
-                <text x="254" y="184" text-anchor="middle" class="tag" fill="#000" fill-opacity=".7" stroke="none">로컬 AI</text>
+                <rect x="226" y="80" width="62" height="24" rx="6" stroke-opacity=".4" stroke-dasharray="3 3" />
+                <text x="257" y="96" text-anchor="middle" class="tag" fill="#000" fill-opacity=".55" stroke="none">Claude</text>
+                <rect x="226" y="134" width="62" height="24" rx="6" stroke-opacity=".4" stroke-dasharray="3 3" />
+                <text x="257" y="150" text-anchor="middle" class="tag" fill="#000" fill-opacity=".55" stroke="none">ChatGPT</text>
+                <text x="104" y="210" text-anchor="middle" class="tag" fill="#000" fill-opacity=".7" stroke="none">기본: 이 컴퓨터에서 무료</text>
+                <text x="257" y="186" text-anchor="middle" class="tag" fill="#000" fill-opacity=".45" stroke="none">선택: 내 계정</text>
               </svg>
             </div>
           </article>
@@ -274,12 +284,16 @@
             <p>ZeroNote 설정의 '요약 AI'에서 Claude나 ChatGPT의 '연결하기'를 누르면 키 발급 페이지가 열립니다. 내 계정으로 로그인해 키를 만들고 붙여 넣으면, ZeroNote가 바로 확인한 뒤 연결합니다. 키는 운영체제 키체인으로 암호화되어 이 컴퓨터에만 저장됩니다.</p>
           </details>
           <details>
+            <summary>무료 요약은 얼마나 정확한가요?</summary>
+            <p>앱에 든 로컬 AI가 처음 한 번 받은 모델로 요약합니다. 메모리 8GB 이상이면 Qwen3 4B(2.5GB), Apple Silicon에 메모리 16GB 이상이면 더 정확한 Gemma 3 12B(7.3GB)를 추천해요. 회의 흐름과 할 일은 잘 잡지만 작은 모델이라 세부 내용을 놓칠 수 있습니다. 중요한 회의는 설정에서 Claude나 ChatGPT 계정을 연결해 더 정확하게 요약할 수 있어요. 요약은 언제든 다시 만들 수 있습니다.</p>
+          </details>
+          <details>
             <summary>어떤 회의 앱에서 쓸 수 있나요?</summary>
             <p>컴퓨터에서 나는 소리를 직접 녹음하므로 Zoom, Google Meet, Microsoft Teams, Discord처럼 소리가 나는 앱이면 모두 됩니다. 대면 회의는 마이크로 녹음해요. 이어폰을 쓰면 상대방 목소리가 더 깨끗하게 남습니다.</p>
           </details>
           <details>
             <summary>어떤 컴퓨터에서 돌아가나요?</summary>
-            <p>Apple Silicon(M1 이상)과 Intel Mac(macOS 13 이상), 64비트 Windows 10·11 PC를 지원합니다. 음성 인식 모델(약 570MB)을 처음 한 번 내려받아야 하고, 메모리 8GB 이상을 권장합니다. 자세한 사양은 <a href="download.html#requirements" style="text-decoration:underline">다운로드 페이지</a>에 있어요.</p>
+            <p>macOS 13 이상의 Apple Silicon(M1 이상)과 Intel Mac에서 돌아갑니다. Windows 10·11 버전은 준비 중이에요. 음성 인식 모델(약 570MB)과 요약 모델(2.5GB부터)을 처음 한 번 내려받아야 하고, 메모리 8GB 이상을 권장합니다. 자세한 사양은 <a href="download.html#requirements" style="text-decoration:underline">다운로드 페이지</a>에 있어요.</p>
           </details>
           <details>
             <summary>녹음하기 전에 알아둘 점이 있나요?</summary>
@@ -291,9 +305,9 @@
 
     <section class="final">
       <svg class="waves" viewBox="0 0 1600 420" aria-hidden="true" fill="none" stroke="rgba(0,0,0,.1)" stroke-width="1">
-        <ellipse cx="800" cy="-60" rx="340" ry="170" />
-        <ellipse cx="800" cy="-60" rx="480" ry="250" />
-        <ellipse cx="800" cy="-60" rx="640" ry="330" />
+        <ellipse class="ripple" cx="800" cy="-60" rx="340" ry="170" />
+        <ellipse class="ripple" cx="800" cy="-60" rx="340" ry="170" />
+        <ellipse class="ripple" cx="800" cy="-60" rx="340" ry="170" />
       </svg>
       <div class="wrap">
         <h2>회의 기록은<br />내 컴퓨터에 두세요</h2>

@@ -16,12 +16,8 @@ const os = detectOS()
 // 랜딩: 내 운영체제 버튼을 앞에
 const primary = document.querySelector('[data-dl="primary"]')
 const secondary = document.querySelector('[data-dl="secondary"]')
-if (primary && secondary && os === 'windows') {
-  primary.textContent = 'Windows용 다운로드'
-  primary.href = 'download.html#windows'
-  secondary.textContent = 'macOS용 다운로드'
-  secondary.href = 'download.html#mac'
-}
+// Windows 설치 파일이 나오기 전까지는 macOS 버튼을 그대로 앞에 둔다
+if (primary && secondary && os === 'windows') secondary.textContent = 'Windows 버전 소식 받기'
 
 // ---------- 기능 목록 ↔ 미리보기 ----------
 document.querySelectorAll('.bars').forEach((el) => {
@@ -106,9 +102,12 @@ if (status) {
           links[k].href = a.browser_download_url
           names[k].textContent = `${a.name} · ${(a.size / 1e6).toFixed(0)}MB`
         } else {
-          links[k].href = RELEASES
-          links[k].textContent = '이번 버전에는 없어요'
-          links[k].setAttribute('aria-disabled', 'true')
+          if (k === 'mac') {
+            links[k].href = RELEASES
+            links[k].textContent = '이번 버전에는 없어요'
+            links[k].setAttribute('aria-disabled', 'true')
+          }
+          // Windows는 준비 중: 카드에 적힌 'GitHub에서 소식 받기'를 그대로 둔다
         }
       }
       const mine = target === 'windows' ? win : target === 'mac' ? mac : null
