@@ -17,7 +17,8 @@
   --r-xl: 28px;
   --r-lg: 22px;
   --r-btn: 10px;
-  color-scheme: light;
+  /* 브라우저가 강제로 어둡게 바꾸면 버튼·스크린샷이 뒤집혀 깨지므로 밝은 화면으로 고정 */
+  color-scheme: only light;
 }
 
 * {
@@ -291,7 +292,7 @@ a {
 .window-bar {
   display: flex;
   gap: 8px;
-  padding: 14px 16px 0;
+  padding: 14px 16px 2px;
   background: #e3e3e6;
 }
 .window-bar i {
@@ -307,10 +308,9 @@ a {
   background: #28c840;
 }
 .window img {
+  display: block;
   width: 100%;
   height: auto;
-  margin-top: -40px;
-  clip-path: inset(40px 0 0 0);
 }
 
 /* ---------- 섹션 공통 ---------- */
@@ -1078,6 +1078,19 @@ code {
   gap: 6px;
 }
 
+/* 휴대폰: 떠 있는 메뉴 위로 본문이 비치지 않게 위쪽을 바탕색으로 가린다 */
+@media (max-width: 900px) {
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0 0 auto;
+    height: 84px;
+    z-index: 49;
+    pointer-events: none;
+    background: linear-gradient(var(--bg) 62%, rgba(245, 245, 245, 0));
+  }
+}
+
 /* ---------- 반응형 ---------- */
 @media (max-width: 900px) {
   .nav-links {
@@ -1130,6 +1143,27 @@ code {
   .works {
     gap: 10px 28px;
     font-size: 16px;
+  }
+  /* 앱 화면은 작게 줄이지 않고 회의록 부분을 크게 잘라 보여 준다 */
+  .showcase {
+    padding: 16px 16px 0;
+    border-radius: var(--r-lg);
+  }
+  .window {
+    border-radius: 10px 10px 0 0;
+  }
+  .window-bar {
+    gap: 6px;
+    padding: 10px 12px 2px;
+  }
+  .window-bar i {
+    width: 9px;
+    height: 9px;
+  }
+  .window img {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: 72% 0;
   }
   .footer-grid {
     grid-template-columns: 1fr;
