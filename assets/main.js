@@ -2,6 +2,46 @@
 const REPO = 'designzeroplus-pro/zeronote-site'
 const RELEASES = `https://github.com/${REPO}/releases`
 
+// ---------- 익명 방문 통계 (PostHog) ----------
+// 쿠키를 쓰지 않고(탭을 닫으면 사라지는 sessionStorage), 위치 추정·화면 녹화 없이 페이지 보기와 다운로드 클릭만 센다.
+const POSTHOG_KEY = 'phc_D9QqCmx7hfYhWqnk7tPj5pwobUcrDXErDPGFa8UGpnJH' // phc_… (비어 있으면 아무것도 보내지 않음)
+const POSTHOG_HOST = 'https://us.i.posthog.com'
+const pending = []
+function track(event, props) {
+  if (!POSTHOG_KEY) return
+  if (window.posthog && window.posthog.__loaded) window.posthog.capture(event, props)
+  else pending.push([event, props])
+}
+if (POSTHOG_KEY) {
+  const s = document.createElement('script')
+  s.async = true
+  s.src = POSTHOG_HOST.replace('.i.posthog.com', '-assets.i.posthog.com') + '/static/array.full.js'
+  s.onload = () => {
+    window.posthog.init(POSTHOG_KEY, {
+      api_host: POSTHOG_HOST,
+      persistence: 'sessionStorage',
+      autocapture: false,
+      capture_pageview: true,
+      capture_pageleave: true,
+      disable_session_recording: true,
+      person_profiles: 'identified_only',
+      property_denylist: ['$ip'],
+      loaded: () => pending.splice(0).forEach(([e, p]) => window.posthog.capture(e, p))
+    })
+  }
+  document.head.appendChild(s)
+}
+document.addEventListener('click', (e) => {
+  const a = e.target.closest && e.target.closest('a[data-dl], a[data-asset], #primary-dl')
+  if (!a) return
+  const href = a.getAttribute('href') || ''
+  track('download_clicked', {
+    page: location.pathname.endsWith('download.html') ? 'download' : 'landing',
+    button: a.dataset.dl || a.dataset.asset || 'primary',
+    file: /\.dmg$/.test(href) ? (/x64/.test(href) ? 'mac-intel' : 'mac-arm64') : /\.exe$/.test(href) ? 'windows' : 'none'
+  })
+})
+
 // ---------- 운영체제 감지 ----------
 function detectOS() {
   const p = (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || ''
