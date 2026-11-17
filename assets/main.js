@@ -57,7 +57,7 @@ const os = detectOS()
 const primary = document.querySelector('[data-dl="primary"]')
 const secondary = document.querySelector('[data-dl="secondary"]')
 // Windows 설치 파일이 나오기 전까지는 macOS 버튼을 그대로 앞에 둔다
-if (primary && secondary && os === 'windows') secondary.textContent = 'Windows 버전 소식 받기'
+if (primary && secondary && os === 'windows') secondary.textContent = 'Windows 출시 알림 받기'
 
 // ---------- 기능 목록 ↔ 미리보기 ----------
 document.querySelectorAll('.bars').forEach((el) => {
@@ -111,11 +111,9 @@ if (status) {
 
   const notYet = () => {
     status.textContent = '첫 베타 빌드를 준비하고 있어요. 공개되면 이 페이지에서 바로 받을 수 있습니다.'
-    for (const k of ['mac', 'win']) {
-      links[k].href = RELEASES
-      links[k].textContent = '곧 공개됩니다'
-      links[k].setAttribute('aria-disabled', 'true')
-    }
+    links.mac.href = RELEASES
+    links.mac.textContent = '곧 공개됩니다'
+    links.mac.setAttribute('aria-disabled', 'true')
     primaryDl.textContent = 'GitHub에서 공개 소식 받기'
     primaryDl.href = `https://github.com/${REPO}`
   }
@@ -139,6 +137,7 @@ if (status) {
       status.classList.add('live')
       for (const [k, a] of [['mac', mac], ['win', win]]) {
         if (a) {
+          links[k].hidden = false
           links[k].href = a.browser_download_url
           names[k].textContent = `${a.name} · ${(a.size / 1e6).toFixed(0)}MB`
         } else {
@@ -147,7 +146,7 @@ if (status) {
             links[k].textContent = '이번 버전에는 없어요'
             links[k].setAttribute('aria-disabled', 'true')
           }
-          // Windows는 준비 중: 카드에 적힌 'GitHub에서 소식 받기'를 그대로 둔다
+          // Windows는 준비 중: 카드의 출시 알림 신청 칸을 그대로 둔다
         }
       }
       const mine = target === 'windows' ? win : target === 'mac' ? mac : null
@@ -157,4 +156,45 @@ if (status) {
       }
     })
     .catch(notYet)
+}
+
+// ---------- Windows 출시 알림 신청 (Netlify Forms) ----------
+// 이메일은 Netlify에만 저장된다. 통계에는 신청했다는 사실만 남기고 주소는 보내지 않는다.
+{
+  const form = document.querySelector('form.waitlist')
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault()
+      const btn = form.querySelector('button[type=submit]')
+      btn.disabled = true
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form)).toString()
+      })
+        .then((r) => {
+          if (!r.ok) throw new Error(r.status)
+          form.querySelector('.waitlist-row').hidden = true
+          form.querySelector('.waitlist-label').hidden = true
+          form.querySelector('.waitlist-done').hidden = false
+          track('waitlist_joined', { platform: 'windows' })
+        })
+        .catch(() => {
+          btn.disabled = false
+          const done = form.querySelector('.waitlist-done')
+          done.textContent = '신청하지 못했어요. 잠시 뒤 다시 시도해 주세요.'
+          done.hidden = false
+        })
+    })
+  }
+}
+
+// 움직임 줄이기 설정이면 소개 영상을 자동 재생하지 않는다
+{
+  const v = document.querySelector('.demo-frame video')
+  if (v && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    v.removeAttribute('autoplay')
+    v.pause()
+    v.controls = true
+  }
 }

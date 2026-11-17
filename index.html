@@ -20,6 +20,107 @@
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
   <link rel="stylesheet" href="assets/styles.css" />
+  <script type="application/ld+json">
+[
+ {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "ZeroNote",
+  "alternateName": "제로노트",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "macOS 13 이상",
+  "description": "녹음, 받아쓰기, 요약까지 평생 무료인 회의록 앱. 회의에 봇이 들어가지 않고, 음성은 내 컴퓨터 밖으로 나가지 않습니다.",
+  "url": "https://zeronote-app.netlify.app/",
+  "downloadUrl": "https://zeronote-app.netlify.app/download.html",
+  "image": "https://zeronote-app.netlify.app/assets/og.png",
+  "screenshot": "https://zeronote-app.netlify.app/assets/app-meeting-1400.jpg",
+  "inLanguage": [
+   "ko",
+   "en"
+  ],
+  "isAccessibleForFree": true,
+  "offers": {
+   "@type": "Offer",
+   "price": "0",
+   "priceCurrency": "KRW"
+  },
+  "featureList": [
+   "시간 제한 없는 녹음",
+   "마이크와 컴퓨터 소리 동시 녹음",
+   "기기 안에서 받아쓰기(whisper.cpp)",
+   "로컬 AI 요약과 할 일 정리",
+   "회의록 검색과 질문",
+   "Markdown·PDF·SRT·Slack·Notion 내보내기"
+  ],
+  "publisher": {
+   "@type": "Organization",
+   "name": "ZeroPlus"
+  }
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "정말 평생 무료인가요?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "네. ZeroNote에는 유료 플랜도 체험 기간도 기능 제한도 없고, 앞으로도 무료입니다. 녹음, 받아쓰기, 스크립트, 다시 듣기는 모두 이 컴퓨터에서 처리되기 때문에 비용이 들지 않고 시간 제한도 없습니다. 요약도 앱에 든 로컬 AI가 무료로 합니다. 더 정확한 요약을 위해 Claude나 ChatGPT 계정을 연결한 경우에만 그 사용료가 각 서비스에서 청구됩니다."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "녹음한 음성이 외부로 전송되나요?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "아니요. 음성은 이 컴퓨터에 저장되고 받아쓰기도 이 컴퓨터에서 합니다. 기본 요약도 이 컴퓨터의 로컬 AI가 하므로 텍스트도 밖으로 나가지 않아요. Claude나 ChatGPT 계정을 연결한 경우에만 받아 적은 텍스트가 그 서비스(Anthropic 또는 OpenAI)로 전송됩니다. 그 밖에 앱이 보내는 것은 첫 실행에서 허용한 경우의 익명 사용 통계(어떤 기능을 썼는지)뿐이고, 회의 내용·제목·파일 이름은 들어가지 않아요. 설정에서 언제든 끌 수 있습니다."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "API 키는 어떻게 만드나요?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "ZeroNote 설정의 '요약 AI'에서 Claude나 ChatGPT의 '연결하기'를 누르면 키 발급 페이지가 열립니다. 내 계정으로 로그인해 키를 만들고 붙여 넣으면, ZeroNote가 바로 확인한 뒤 연결합니다. 키는 운영체제 키체인으로 암호화되어 이 컴퓨터에만 저장됩니다."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "무료 요약은 얼마나 정확한가요?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "앱에 든 로컬 AI가 처음 한 번 받은 모델로 요약합니다. 메모리 8GB 이상이면 Qwen3 4B(2.5GB), Apple Silicon에 메모리 16GB 이상이면 더 정확한 Gemma 3 12B(7.3GB)를 추천해요. 회의 흐름과 할 일은 잘 잡지만 작은 모델이라 세부 내용을 놓칠 수 있습니다. 중요한 회의는 설정에서 Claude나 ChatGPT 계정을 연결해 더 정확하게 요약할 수 있어요. 요약은 언제든 다시 만들 수 있습니다."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "어떤 회의 앱에서 쓸 수 있나요?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "컴퓨터에서 나는 소리를 직접 녹음하므로 Zoom, Google Meet, Microsoft Teams, Discord처럼 소리가 나는 앱이면 모두 됩니다. 대면 회의는 마이크로 녹음해요. 이어폰을 쓰면 상대방 목소리가 더 깨끗하게 남습니다."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "어떤 컴퓨터에서 돌아가나요?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "macOS 13 이상의 Apple Silicon(M1 이상)과 Intel Mac에서 돌아갑니다. Windows 10·11 버전은 준비 중이에요. 음성 인식 모델(약 570MB)과 요약 모델(2.5GB부터)을 처음 한 번 내려받아야 하고, 메모리 8GB 이상을 권장합니다. 자세한 사양은 다운로드 페이지에 있어요."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "녹음하기 전에 알아둘 점이 있나요?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "회의를 녹음하기 전에는 참석자에게 녹음 사실을 알리고 동의를 받아 주세요. 지역과 회사 규정에 따라 녹음 고지가 법적으로 필요할 수 있습니다."
+    }
+   }
+  ]
+ }
+]
+  </script>
 </head>
 <body>
   <header class="nav" aria-label="주 메뉴">
@@ -51,7 +152,7 @@
         <p class="hero-sub">녹음, 받아쓰기, 요약까지 모든 기능이 평생 무료입니다. 시간 제한도 회원가입도 없고, 음성은 기기 밖으로 나가지 않아요.</p>
         <div class="hero-cta">
           <a class="btn btn-dark" data-dl="primary" href="download.html#mac">macOS용 무료 다운로드</a>
-          <a class="btn btn-light" data-dl="secondary" href="download.html#windows">Windows는 준비 중</a>
+          <a class="btn btn-light" data-dl="secondary" href="download.html#windows">Windows 출시 알림 받기</a>
         </div>
         <p class="hero-note">macOS(Apple Silicon·Intel)용이며, Windows 버전은 준비 중입니다.</p>
       </div>
@@ -74,6 +175,23 @@
         </div>
       </figure>
     </div>
+
+    <section class="section" id="demo">
+      <div class="wrap demo">
+        <div class="demo-copy">
+          <p class="eyebrow">Demo</p>
+          <h2>18초면 어떻게 쓰는지 보여요</h2>
+          <ol class="demo-steps">
+            <li><b>녹음 시작</b><span>Zoom이든 대면 회의든 버튼 하나로 마이크와 컴퓨터 소리를 함께 받아요.</span></li>
+            <li><b>받아쓰기</b><span>말하는 동안 이 컴퓨터에서 바로 글로 옮겨요. 누가 말했는지도 나눠 적어요.</span></li>
+            <li><b>회의록 정리</b><span>끝나면 요약과 할 일이 자동으로 정리돼요. 모두 무료예요.</span></li>
+          </ol>
+        </div>
+        <div class="demo-frame">
+          <video src="assets/demo.mp4" poster="assets/demo-poster.jpg" width="720" height="900" autoplay muted loop playsinline preload="metadata" aria-label="ZeroNote 소개 영상: 녹음 봇 없이 녹음하고, 받아 적고, 요약과 할 일을 정리하는 과정"></video>
+        </div>
+      </div>
+    </section>
 
     <section class="section" id="privacy">
       <div class="wrap">
@@ -343,6 +461,7 @@
           <li><a href="download.html#guide">설치 안내</a></li>
           <li><a href="download.html#changelog">변경 기록</a></li>
           <li><a href="#faq">자주 묻는 질문</a></li>
+          <li><a href="privacy.html">개인정보처리방침</a></li>
         </ul>
       </div>
       <div>
