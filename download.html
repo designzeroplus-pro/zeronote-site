@@ -5,7 +5,7 @@
   <meta name="color-scheme" content="only light" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ZeroNote 다운로드 — 평생 무료 회의록 앱</title>
-  <meta name="description" content="평생 무료 회의록 앱 ZeroNote를 macOS(Apple Silicon·Intel)에서 내려받으세요. 유료 플랜도 회원가입도 없습니다. Windows 버전은 준비 중입니다." />
+  <meta name="description" content="평생 무료 회의록 앱 ZeroNote를 macOS(Apple Silicon·Intel)와 Windows 10·11(x64)에서 내려받으세요. 유료 플랜도 회원가입도 없습니다." />
   <link rel="canonical" href="https://zeronote-app.netlify.app/download.html" />
   <meta property="og:title" content="ZeroNote 다운로드 — 평생 무료 회의록 앱" />
   <meta property="og:description" content="녹음, 받아쓰기, 요약까지 평생 무료. 유료 플랜도 회원가입도 없고, 음성은 내 컴퓨터 밖으로 나가지 않아요." />
@@ -15,7 +15,7 @@
   <meta name="theme-color" content="#f5f5f5" />
   <link rel="icon" href="assets/icon.svg?v=4" type="image/svg+xml" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
-  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="stylesheet" href="assets/styles.css?v=5" />
 </head>
 <body>
   <header class="nav" aria-label="주 메뉴">
@@ -62,45 +62,24 @@
             <div><dt>운영체제</dt><dd>macOS 13 Ventura 이상</dd></div>
             <div><dt>파일</dt><dd>디스크 이미지 (.dmg)</dd></div>
           </dl>
-          <a class="btn btn-dark" data-asset="mac" href="#">Apple Silicon용 다운로드</a>
+          <a class="btn btn-dark" data-asset="mac" href="https://github.com/designzeroplus-pro/zeronote-site/releases/latest">Apple Silicon용 다운로드</a>
           <p class="file-name" data-asset-name="mac"></p>
           <a class="text-link" data-asset="mac-intel" href="#" hidden>Intel Mac용 다운로드</a>
         </article>
 
-        <article class="platform soon" id="windows" data-platform="windows">
+        <article class="platform" id="windows" data-platform="windows">
           <div class="platform-head">
             <h2>Windows</h2>
             <span class="badge">내 컴퓨터</span>
           </div>
           <dl>
-            <div><dt>상태</dt><dd>준비 중입니다</dd></div>
-            <div><dt>대상</dt><dd>Windows 10, 11 (64비트)</dd></div>
+            <div><dt>파일</dt><dd>설치 프로그램 (.exe)</dd></div>
+            <div><dt>운영체제</dt><dd>Windows 10, 11 (x64)</dd></div>
           </dl>
-          <a class="btn btn-dark" data-asset="win" href="#" hidden>Windows용 다운로드</a>
+          <a class="btn btn-dark" data-asset="win" href="https://github.com/designzeroplus-pro/zeronote-site/releases/latest">Windows용 다운로드</a>
           <p class="file-name" data-asset-name="win"></p>
-          <form class="waitlist" name="windows-waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-            <input type="hidden" name="form-name" value="windows-waitlist" />
-            <p hidden><label>비워 두세요 <input name="bot-field" /></label></p>
-            <label class="waitlist-label" for="waitlist-email">Windows 버전이 나오면 이메일로 알려 드려요</label>
-            <div class="waitlist-row">
-              <input id="waitlist-email" type="email" name="email" required autocomplete="email" placeholder="이메일 주소" />
-              <button class="btn btn-dark" type="submit">알림 받기</button>
-            </div>
-            <p class="waitlist-note">출시 알림을 한 번 보내는 데만 쓰고, 보낸 뒤에는 지웁니다. <a href="privacy.html#waitlist">개인정보처리방침</a></p>
-            <p class="waitlist-done" role="status" hidden>등록됐어요. Windows 버전이 나오면 알려 드릴게요.</p>
-          </form>
         </article>
 
-        <article class="platform soon">
-          <div class="platform-head">
-            <h2>Linux</h2>
-          </div>
-          <dl>
-            <div><dt>상태</dt><dd>준비 중입니다</dd></div>
-            <div><dt>소식 받기</dt><dd>GitHub 저장소에서 Watch → Releases를 켜 두면 새 버전이 나올 때 알려 드려요.</dd></div>
-          </dl>
-          <a class="btn btn-light" href="https://github.com/designzeroplus-pro/zeronote-site">GitHub에서 소식 받기</a>
-        </article>
       </div>
     </div>
 
@@ -125,8 +104,7 @@
           <ol class="steps" id="steps-win" role="tabpanel" aria-labelledby="tab-win" hidden>
             <li><div><b>설치 프로그램 실행</b><p>내려받은 .exe 파일을 실행하고 안내에 따라 설치하세요.</p></div></li>
             <li><div><b>보안 경고가 나오면</b><p>베타 빌드는 아직 코드 서명 전이라 'Windows의 PC 보호' 창이 뜰 수 있어요. '추가 정보'를 누른 뒤 '실행'을 누르세요.</p></div></li>
-            <li><div><b>전사 엔진 설치</b><p>처음 실행하면 설정 → 음성 인식에서 '전사 엔진 자동 설치'를 눌러 주세요. 공식 whisper.cpp 빌드를 내려받아 설치합니다.</p></div></li>
-            <li><div><b>음성 인식 모델 내려받기</b><p>같은 화면에서 모델을 내려받으세요. 사양이 낮은 PC라면 Small 모델이 더 빠릅니다.</p></div></li>
+            <li><div><b>음성 인식 모델 내려받기</b><p>전사 엔진은 설치 파일에 포함되어 있습니다. 첫 실행 안내에서 음성 인식 모델을 내려받으세요. 사양이 낮은 PC라면 Small 모델이 더 빠릅니다.</p></div></li>
             <li><div><b>녹음 시작</b><p>'녹음 시작'을 누르면 마이크와 컴퓨터 소리를 함께 받아 적습니다. Windows는 별도 권한 없이 컴퓨터 소리를 녹음할 수 있어요.</p></div></li>
           </ol>
         </div>
@@ -141,10 +119,10 @@
         </div>
         <table class="req-table">
           <thead>
-            <tr><th scope="col">항목</th><th scope="col">macOS</th><th scope="col">Windows (준비 중)</th></tr>
+            <tr><th scope="col">항목</th><th scope="col">macOS</th><th scope="col">Windows</th></tr>
           </thead>
           <tbody>
-            <tr><td>운영체제</td><td>macOS 13 이상</td><td>Windows 10, 11 (64비트)</td></tr>
+            <tr><td>운영체제</td><td>macOS 13 이상</td><td>Windows 10, 11 (x64)</td></tr>
             <tr><td>프로세서</td><td>Apple Silicon 또는 Intel</td><td>최근 5년 이내 x64 CPU</td></tr>
             <tr><td>메모리</td><td>8GB 이상</td><td>8GB 이상 (16GB 권장)</td></tr>
             <tr><td>저장 공간</td><td colspan="2">앱과 음성 모델 약 1GB, 요약 모델 2.5~7.3GB, 녹음 1시간당 약 115MB</td></tr>
@@ -207,6 +185,6 @@
     </div>
   </footer>
 
-  <script src="assets/main.js" defer></script>
+  <script src="assets/main.js?v=5" defer></script>
 </body>
 </html>

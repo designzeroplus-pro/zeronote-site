@@ -19,7 +19,7 @@
   <meta name="theme-color" content="#f5f5f5" />
   <link rel="icon" href="assets/icon.svg?v=4" type="image/svg+xml" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
-  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="stylesheet" href="assets/styles.css?v=5" />
   <script type="application/ld+json">
 [
  {
@@ -28,7 +28,7 @@
   "name": "ZeroNote",
   "alternateName": "제로노트",
   "applicationCategory": "BusinessApplication",
-  "operatingSystem": "macOS 13 이상",
+  "operatingSystem": ["macOS 13 이상", "Windows 10 x64", "Windows 11 x64"],
   "description": "녹음, 받아쓰기, 요약까지 평생 무료인 회의록 앱. 회의에 봇이 들어가지 않고, 음성은 내 컴퓨터 밖으로 나가지 않습니다.",
   "url": "https://zeronote-app.netlify.app/",
   "downloadUrl": "https://zeronote-app.netlify.app/download.html",
@@ -106,7 +106,7 @@
     "name": "어떤 컴퓨터에서 돌아가나요?",
     "acceptedAnswer": {
      "@type": "Answer",
-     "text": "macOS 13 이상의 Apple Silicon(M1 이상)과 Intel Mac에서 돌아갑니다. Windows 10·11 버전은 준비 중이에요. 음성 인식 모델(약 570MB)과 요약 모델(2.5GB부터)을 처음 한 번 내려받아야 하고, 메모리 8GB 이상을 권장합니다. 자세한 사양은 다운로드 페이지에 있어요."
+     "text": "macOS 13 이상의 Apple Silicon(M1 이상)과 Intel Mac, Windows 10·11(x64)에서 사용할 수 있어요. 음성 인식 모델(약 570MB)과 요약 모델(2.5GB부터)을 처음 한 번 내려받아야 하고, 메모리 8GB 이상을 권장합니다. 자세한 사양은 다운로드 페이지에 있어요."
     }
    },
    {
@@ -150,9 +150,9 @@
         <p class="hero-sub">녹음, 받아쓰기, 요약까지 모든 기능이 평생 무료입니다. 시간 제한도 회원가입도 없고, 음성은 기기 밖으로 나가지 않아요.</p>
         <div class="hero-cta">
           <a class="btn btn-dark" data-dl="primary" href="download.html#mac">macOS용 무료 다운로드</a>
-          <a class="btn btn-light" data-dl="secondary" href="download.html#windows">Windows 출시 알림 받기</a>
+          <a class="btn btn-light" data-dl="secondary" href="download.html#windows">Windows용 무료 다운로드</a>
         </div>
-        <p class="hero-note">macOS(Apple Silicon·Intel)용이며, Windows 버전은 준비 중입니다.</p>
+        <p class="hero-note">macOS 13 이상 · Windows 10·11 (x64)</p>
       </div>
     </section>
 
@@ -410,7 +410,7 @@
           </details>
           <details>
             <summary>어떤 컴퓨터에서 돌아가나요?</summary>
-            <p>macOS 13 이상의 Apple Silicon(M1 이상)과 Intel Mac에서 돌아갑니다. Windows 10·11 버전은 준비 중이에요. 음성 인식 모델(약 570MB)과 요약 모델(2.5GB부터)을 처음 한 번 내려받아야 하고, 메모리 8GB 이상을 권장합니다. 자세한 사양은 <a href="download.html#requirements" style="text-decoration:underline">다운로드 페이지</a>에 있어요.</p>
+            <p>macOS 13 이상의 Apple Silicon(M1 이상)과 Intel Mac, Windows 10·11(x64)에서 사용할 수 있어요. 음성 인식 모델(약 570MB)과 요약 모델(2.5GB부터)을 처음 한 번 내려받아야 하고, 메모리 8GB 이상을 권장합니다. 자세한 사양은 <a href="download.html#requirements" style="text-decoration:underline">다운로드 페이지</a>에 있어요.</p>
           </details>
           <details>
             <summary>녹음하기 전에 알아둘 점이 있나요?</summary>
@@ -471,6 +471,6 @@
     </div>
   </footer>
 
-  <script src="assets/main.js" defer></script>
+  <script src="assets/main.js?v=5" defer></script>
 </body>
 </html>

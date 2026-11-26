@@ -48,7 +48,6 @@ function detectOS() {
   const ua = navigator.userAgent
   if (/mac/i.test(p) || /Macintosh/.test(ua)) return 'mac'
   if (/win/i.test(p) || /Windows/.test(ua)) return 'windows'
-  if (/linux/i.test(p)) return 'linux'
   return null
 }
 const os = detectOS()
@@ -56,8 +55,12 @@ const os = detectOS()
 // 랜딩: 내 운영체제 버튼을 앞에
 const primary = document.querySelector('[data-dl="primary"]')
 const secondary = document.querySelector('[data-dl="secondary"]')
-// Windows 설치 파일이 나오기 전까지는 macOS 버튼을 그대로 앞에 둔다
-if (primary && secondary && os === 'windows') secondary.textContent = 'Windows 출시 알림 받기'
+if (primary && secondary && os === 'windows') {
+  primary.href = 'download.html#windows'
+  primary.textContent = 'Windows용 무료 다운로드'
+  secondary.href = 'download.html#mac'
+  secondary.textContent = 'macOS용 무료 다운로드'
+}
 
 // ---------- 기능 목록 ↔ 미리보기 ----------
 document.querySelectorAll('.bars').forEach((el) => {
@@ -102,20 +105,17 @@ const status = document.getElementById('release-status')
 if (status) {
   const target = location.hash === '#windows' ? 'windows' : location.hash === '#mac' ? 'mac' : os
   if (target === 'windows') selectTab('tab-win')
-  const card = document.querySelector(`.platform[data-platform="${target}"]`)
+  const card = document.querySelector(`.platform[data-platform="${os}"]`)
   if (card) card.classList.add('detected')
 
   const primaryDl = document.getElementById('primary-dl')
   const links = { mac: document.querySelector('[data-asset="mac"]'), win: document.querySelector('[data-asset="win"]') }
   const names = { mac: document.querySelector('[data-asset-name="mac"]'), win: document.querySelector('[data-asset-name="win"]') }
 
-  const notYet = () => {
-    status.textContent = '첫 베타 빌드를 준비하고 있어요. 공개되면 이 페이지에서 바로 받을 수 있습니다.'
-    links.mac.href = RELEASES
-    links.mac.textContent = '곧 공개됩니다'
-    links.mac.setAttribute('aria-disabled', 'true')
-    primaryDl.textContent = 'GitHub에서 공개 소식 받기'
-    primaryDl.href = `https://github.com/${REPO}`
+  const showReleasePage = () => {
+    status.textContent = '최신 설치 파일은 공식 배포 페이지에서 확인할 수 있습니다.'
+    primaryDl.textContent = '설치 파일 보기'
+    primaryDl.href = RELEASES + '/latest'
   }
 
   fetch(`https://api.github.com/repos/${REPO}/releases/latest`, { headers: { Accept: 'application/vnd.github+json' } })
@@ -131,7 +131,7 @@ if (status) {
         intelLink.hidden = false
       }
       const win = assets.find((a) => /\.exe$/i.test(a.name))
-      if (!mac && !win) return notYet()
+      if (!mac && !win) return showReleasePage()
       const date = new Date(rel.published_at).toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' })
       status.textContent = `최신 버전 ${rel.tag_name} · ${date}`
       status.classList.add('live')
@@ -141,12 +141,8 @@ if (status) {
           links[k].href = a.browser_download_url
           names[k].textContent = `${a.name} · ${(a.size / 1e6).toFixed(0)}MB`
         } else {
-          if (k === 'mac') {
-            links[k].href = RELEASES
-            links[k].textContent = '이번 버전에는 없어요'
-            links[k].setAttribute('aria-disabled', 'true')
-          }
-          // Windows는 준비 중: 카드의 출시 알림 신청 칸을 그대로 둔다
+          links[k].hidden = true
+          names[k].textContent = '이 버전에는 설치 파일이 없습니다.'
         }
       }
       const mine = target === 'windows' ? win : target === 'mac' ? mac : null
@@ -155,38 +151,7 @@ if (status) {
         primaryDl.textContent = target === 'windows' ? 'Windows용 다운로드' : 'macOS용 다운로드'
       }
     })
-    .catch(notYet)
-}
-
-// ---------- Windows 출시 알림 신청 (Netlify Forms) ----------
-// 이메일은 Netlify에만 저장된다. 통계에는 신청했다는 사실만 남기고 주소는 보내지 않는다.
-{
-  const form = document.querySelector('form.waitlist')
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault()
-      const btn = form.querySelector('button[type=submit]')
-      btn.disabled = true
-      fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(new FormData(form)).toString()
-      })
-        .then((r) => {
-          if (!r.ok) throw new Error(r.status)
-          form.querySelector('.waitlist-row').hidden = true
-          form.querySelector('.waitlist-label').hidden = true
-          form.querySelector('.waitlist-done').hidden = false
-          track('waitlist_joined', { platform: 'windows' })
-        })
-        .catch(() => {
-          btn.disabled = false
-          const done = form.querySelector('.waitlist-done')
-          done.textContent = '신청하지 못했어요. 잠시 뒤 다시 시도해 주세요.'
-          done.hidden = false
-        })
-    })
-  }
+    .catch(showReleasePage)
 }
 
 // 움직임 줄이기 설정이면 소개 영상을 자동 재생하지 않는다
