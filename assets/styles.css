@@ -155,13 +155,8 @@ a {
   margin-right: auto;
 }
 .logo-mark {
-  display: grid;
-  place-items: center;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: var(--brand);
-  color: #fff;
+  display: block;
+  flex: none;
 }
 .nav-links {
   display: flex;
@@ -1195,7 +1190,7 @@ code {
   margin: 0 0 22px;
   padding: 7px 14px;
   border-radius: 999px;
-  background: var(--brand);
+  background: #121212;
   color: #fff;
   font-size: 14px;
   font-weight: 600;
