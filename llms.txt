@@ -15,4 +15,4 @@
 - [개인정보처리방침](https://zeronote-app.netlify.app/privacy.html): 처리하는 정보와 처리하지 않는 정보
 
 ## 선택
-- [릴리스](https://github.com/designzeroplus-pro/zeronote-site/releases): 버전별 설치 파일과 변경 사항
+- [변경 기록](https://zeronote-app.netlify.app/changelog.html): 버전별 변경 사항

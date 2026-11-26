@@ -3,6 +3,8 @@ name: Deploy to Netlify
 on:
   push:
     branches: [main]
+  release:
+    types: [published, edited, deleted, unpublished]
   workflow_dispatch:
 concurrency:
   group: netlify
@@ -12,9 +14,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+      - name: Render published release notes
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 -m venv "$RUNNER_TEMP/notes-env"
+          "$RUNNER_TEMP/notes-env/bin/pip" install markdown-it-py==3.0.0
+          gh api --paginate --slurp "repos/$GITHUB_REPOSITORY/releases?per_page=100" | "$RUNNER_TEMP/notes-env/bin/python" .github/render-notes.py
       - name: Deploy
         run: npx --yes netlify-cli@26.0.2 deploy --prod --dir . --no-build --message "${{ github.sha }}"
         env:
