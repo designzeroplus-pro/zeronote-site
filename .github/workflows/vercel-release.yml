@@ -1,0 +1,19 @@
+name: Refresh release notes on Vercel
+
+on:
+  release:
+    types: [published, edited, deleted, unpublished]
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Rebuild the production branch
+        env:
+          VERCEL_RELEASE_DEPLOY_HOOK: ${{ secrets.VERCEL_RELEASE_DEPLOY_HOOK }}
+        run: |
+          test -n "$VERCEL_RELEASE_DEPLOY_HOOK"
+          curl --fail --silent --show-error --request POST --output /dev/null "$VERCEL_RELEASE_DEPLOY_HOOK"

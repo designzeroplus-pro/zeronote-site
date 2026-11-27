@@ -1,10 +1,6 @@
-# main에 푸시하면 Netlify(zeronote-app)로 자동 배포
-name: Deploy to Netlify
+# 이전 사이트 주소의 리디렉션과 Slack 콜백을 수동으로 갱신합니다.
+name: Update legacy Netlify routes
 on:
-  push:
-    branches: [main]
-  release:
-    types: [published, edited, deleted, unpublished]
   workflow_dispatch:
 concurrency:
   group: netlify
@@ -19,13 +15,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Render published release notes
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          python3 -m venv "$RUNNER_TEMP/notes-env"
-          "$RUNNER_TEMP/notes-env/bin/pip" install markdown-it-py==3.0.0
-          gh api --paginate --slurp "repos/$GITHUB_REPOSITORY/releases?per_page=100" | "$RUNNER_TEMP/notes-env/bin/python" .github/render-notes.py
       - name: Deploy
         run: npx --yes netlify-cli@26.0.2 deploy --prod --dir . --no-build --message "${{ github.sha }}"
         env:

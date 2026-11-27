@@ -19,4 +19,4 @@ Allow: /
 User-agent: Yeti
 Allow: /
 
-Sitemap: https://zeronote-app.netlify.app/sitemap.xml
+Sitemap: https://zeronote-app.vercel.app/sitemap.xml

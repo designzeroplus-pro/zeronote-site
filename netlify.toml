@@ -8,3 +8,57 @@
 
 [functions]
   directory = "netlify/functions"
+
+[[redirects]]
+  from = "/"
+  to = "https://zeronote-app.vercel.app/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/index.html"
+  to = "https://zeronote-app.vercel.app/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/download.html"
+  to = "https://zeronote-app.vercel.app/download.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/privacy.html"
+  to = "https://zeronote-app.vercel.app/privacy.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/changelog.html"
+  to = "https://zeronote-app.vercel.app/changelog.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/robots.txt"
+  to = "https://zeronote-app.vercel.app/robots.txt"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sitemap.xml"
+  to = "https://zeronote-app.vercel.app/sitemap.xml"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/llms.txt"
+  to = "https://zeronote-app.vercel.app/llms.txt"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/assets/*"
+  to = "https://zeronote-app.vercel.app/assets/:splat"
+  status = 301
+  force = true
