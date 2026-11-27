@@ -5,7 +5,7 @@
   <meta name="color-scheme" content="only light" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>개인정보처리방침 — ZeroNote</title>
-  <meta name="description" content="ZeroNote 앱과 웹사이트가 어떤 정보를 처리하고, 어떤 정보를 처리하지 않는지 설명합니다. 회의 음성과 기록은 사용자의 컴퓨터에만 저장됩니다." />
+  <meta name="description" content="ZeroNote 앱과 웹사이트가 어떤 정보를 처리하고, 어떤 정보를 처리하지 않는지 설명합니다. 기본 로컬 저장, 선택적 Google 로그인과 개인 Drive 동기화를 안내합니다." />
   <link rel="canonical" href="https://zeronote-app.netlify.app/privacy.html" />
   <meta property="og:title" content="개인정보처리방침 — ZeroNote" />
   <meta property="og:url" content="https://zeronote-app.netlify.app/privacy.html" />
@@ -32,22 +32,27 @@
 
     <main class="legal wrap">
     <h1>개인정보처리방침</h1>
-    <p class="legal-meta">시행일 2026년 11월 17일</p>
+    <p class="legal-meta">시행일 2026년 11월 27일</p>
 
     <p class="legal-lead">ZeroNote(이하 "서비스")는 회의를 녹음하고 받아 적어 회의록으로 정리하는 데스크톱 앱과 그 소개 웹사이트(zeronote-app.netlify.app)입니다. ZeroPlus(이하 "운영자")는 사용자의 회의 내용을 받지 않도록 서비스를 만들었습니다. 이 문서는 그래도 처리되는 정보가 무엇인지, 처리되지 않는 정보가 무엇인지 설명합니다.</p>
 
     <h2 id="summary">한눈에 보기</h2>
     <ul>
-      <li>회의 음성, 받아 적은 기록, 회의록은 사용자의 컴퓨터에만 저장되며 운영자에게 전송되지 않습니다.</li>
+      <li>회의 음성과 회의록은 기본으로 사용자 컴퓨터에 저장됩니다. 개인 Google Drive 동기화를 켜면 텍스트 회의록이 사용자의 Drive에도 저장됩니다.</li>
       <li>앱은 사용자가 허용한 경우에만 익명 사용 통계(어떤 기능을 썼는지)를 보냅니다. 회의 내용, 제목, 파일 이름은 포함되지 않습니다.</li>
       <li>웹사이트는 쿠키 없이 방문 수와 다운로드 클릭 수를 셉니다.</li>
       <li>Windows 출시 알림 신청은 종료되었습니다. 기존 신청자의 이메일 보관 기간은 아래 3항에 안내되어 있습니다.</li>
-      <li>회원가입이 없어 이름, 전화번호, 계정 정보를 받지 않습니다.</li>
+      <li>로그인 없이 녹음할 수 있습니다. Google 로그인을 선택하면 Firebase Authentication에서 ZeroNote 회원 계정을 관리합니다.</li>
     </ul>
 
     <h2 id="app">1. 앱이 처리하는 정보</h2>
-    <h3>사용자의 컴퓨터에만 저장되는 정보</h3>
-    <p>녹음한 음성, 받아 적은 기록, 요약과 할 일, 설정, 연결한 Claude·OpenAI API 키는 사용자의 컴퓨터에만 저장됩니다. API 키는 운영체제의 보안 저장소로 암호화합니다. 받아쓰기와 기본 요약은 앱에 든 엔진으로 이 컴퓨터에서 처리합니다. 앱을 지우거나 설정의 데이터 위치에서 파일을 지우면 함께 삭제됩니다.</p>
+    <h3>사용자의 컴퓨터에 저장되는 정보</h3>
+    <p>녹음한 음성, 받아 적은 기록, 요약과 할 일, 설정, 연결한 Claude·OpenAI API 키는 사용자의 컴퓨터에 저장됩니다. API 키는 운영체제의 보안 저장소로 암호화합니다. 받아쓰기와 기본 요약은 앱에 든 엔진으로 이 컴퓨터에서 처리합니다. 기기에 보관한 회의 파일은 설정의 데이터 위치에서 삭제할 수 있습니다.</p>
+
+    <h3>Google 계정과 개인 Drive 동기화 (선택)</h3>
+    <p>Google로 로그인하면 운영자는 Firebase Authentication에서 이메일, 회원 식별자, 가입 및 로그인 시각을 확인할 수 있습니다. 로그인 유지에 동의하면 앱은 운영체제 암호화를 사용해 로그인 정보를 이 기기에 보관합니다.</p>
+    <p>설정 → 계정에서 Drive 동기화를 켜면 완료된 회의의 제목, 폴더, 태그, 화자, 전사문, 요약과 할 일이 사용자 개인 Drive의 ZeroNote 전용 공간에 저장됩니다. 녹음 원본은 기기에 보관합니다. ZeroNote는 Google에서 받은 정보를 로그인, 회원 관리 및 사용자가 켠 동기화에 사용합니다. 운영자의 회원 관리 화면에는 회의 내용이 표시되지 않습니다.</p>
+    <p>설정 → 계정에서 동기화를 일시 중지하거나 회원 탈퇴를 선택할 수 있습니다. 탈퇴하면 Firebase의 회원 계정을 삭제합니다. 개인 Drive의 회의록은 기본으로 보관하며, 탈퇴 화면에서 영구 삭제를 선택할 수 있습니다. 기기에 보관한 회의록은 앱에서 직접 관리합니다.</p>
 
     <h3 id="telemetry">익명 사용 통계 (선택)</h3>
     <p>앱을 더 낫게 만들기 위해, 사용자가 허용한 경우 아래 정보를 보냅니다. 새로 설치하면 첫 실행 안내의 첫 화면에서 묻고(기본으로 켜져 있음), 기존 사용자에게는 홈 화면에서 한 번 묻습니다. 답하기 전에는 보내지 않으며, 설정 → 일반 → "익명 사용 통계 보내기"에서 언제든 끌 수 있습니다. 끄면 아직 보내지 않은 기록도 버립니다.</p>
@@ -82,17 +87,18 @@
     </ul>
 
     <h2 id="processors">4. 처리를 맡기는 곳과 국외 이전</h2>
-    <p>운영자는 아래 업체에 정보 처리를 맡깁니다. 두 업체 모두 미국에 서버가 있어, 정보가 미국으로 전송되어 저장됩니다.</p>
+    <p>운영자는 아래 업체에 정보 처리를 맡깁니다. 기존 익명 통계와 웹 호스팅 정보는 미국으로 전송되어 저장됩니다. Google 로그인 이용 시 회원 계정 처리를 Google에 위탁합니다.</p>
     <div class="legal-table">
       <table>
         <thead><tr><th scope="col">업체</th><th scope="col">맡기는 일</th><th scope="col">정보</th><th scope="col">보관</th></tr></thead>
         <tbody>
+          <tr><td>Google LLC (Firebase Authentication)</td><td>선택한 Google 로그인 및 회원 관리</td><td>이메일, 회원 식별자, 계정 활동 시각</td><td>ZeroNote 회원 탈퇴 시 계정 삭제</td></tr>
           <tr><td>PostHog Inc. (미국)</td><td>앱·웹사이트 익명 통계 저장과 분석</td><td>위 1, 2의 익명 통계</td><td>최대 1년</td></tr>
           <tr><td>Netlify Inc. (미국)</td><td>웹사이트 호스팅, 출시 알림 신청 저장</td><td>접속 기록, 신청한 이메일 주소</td><td>위 3의 기간</td></tr>
         </tbody>
       </table>
     </div>
-    <p>전송은 서비스를 이용하거나 신청할 때 인터넷으로 이뤄집니다. 통계를 끄거나 신청하지 않으면 해당 정보는 전송되지 않습니다.</p>
+    <p>전송은 서비스를 이용하거나 신청할 때 인터넷으로 이뤄집니다. 앱의 사용 통계와 Google 로그인은 각각 선택할 수 있습니다.</p>
 
     <h2 id="rights">5. 사용자의 권리</h2>
     <p>사용자는 언제든 익명 통계를 끌 수 있고, 출시 알림 신청의 확인·삭제를 요청할 수 있습니다. 익명 통계는 사람을 알아볼 수 없는 무작위 ID로만 저장되므로, 삭제를 원하면 앱 데이터 폴더의 <code>install-id</code> 값을 함께 알려 주세요. 요청은 아래 문의처로 받으며, 받은 날부터 10일 안에 처리합니다.</p>
